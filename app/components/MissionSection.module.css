@@ -1,0 +1,72 @@
+.missionSection {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #D6D3C4;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.heading {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #242424;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.scratchedOut {
+  color: rgba(36, 36, 36, 0.5);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    top: 50%;
+    height: 0.08em;
+    background: #500000;
+    transform: rotate(-3deg);
+  }
+}
+
+.replacement {
+  color: #500000;
+}
+
+.carContainer {
+  position: absolute;
+  bottom: 0rem;
+  right: 0;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.missionImage {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1.2;
+  }
+  
+  .carContainer {
+    bottom: 1rem;
+  }
+  
+  .missionImage {
+    width: 150px;
+    height: auto;
+  }
+}

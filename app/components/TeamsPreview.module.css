@@ -1,0 +1,199 @@
+
+
+/* --- 1. Design System: CSS Custom Properties --- */
+.teamsSection {
+  --color-background: #fff;
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #6e6e73;
+  --color-border: #e8e8ea;
+  --color-accent: #490008;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --border-radius: 24px;
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --transition-fast: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+/* --- 2. Main Section Layout --- */
+.teamsSection {
+  padding: 8rem 0;
+  background-color: var(--color-background);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- 3. Introductory Typography --- */
+.intro {
+  text-align: center;
+  margin-bottom: 5rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.superTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+}
+
+.subTitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- 4. Teams Grid & Card Styling (UPDATED) --- */
+.teamsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.teamCard {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.teamCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- 5. Card Internals: Image & Content --- */
+.imageWrapper {
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+.teamImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 500ms ease-in-out;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.teamName {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* --- 6. Call to Action (CTA) Link --- */
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.ctaLink:hover {
+  color: var(--color-accent);
+}
+
+.ctaLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast);
+}
+
+.ctaLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.ctaIcon {
+  transition: transform var(--transition-fast);
+}
+
+.ctaLink:hover .ctaIcon {
+  transform: translate(4px, -4px);
+}
+
+/* --- 7. Responsive Design (UPDATED) --- */
+@media (max-width: 1024px) {
+  .teamsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teamCard:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1rem);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamsSection {
+    padding: 5rem 0;
+  }
+  
+  .intro {
+    margin-bottom: 4rem;
+    text-align: left;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .teamsGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .teamCard:last-child {
+    max-width: none;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .teamName {
+    font-size: 1.75rem;
+  }
+}

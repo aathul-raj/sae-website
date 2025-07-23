@@ -1,0 +1,369 @@
+/* --- 1. Design System & Page Base --- */
+.programPage {
+  --color-background: #FFFFFF;
+  --color-background-alt: #F8F9FA;
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #555;
+  --color-border: #e8e8ea;
+  --color-accent: #490008;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  padding-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem;
+}
+
+/* --- 2. Hero Section --- */
+.hero {
+  text-align: left;
+  margin-bottom: 6rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 4rem;
+}
+
+.title {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.tagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 1rem 0 0;
+  line-height: 1.6;
+}
+
+/* --- 3. Main Content Grid --- */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.stickyColumn {
+  position: sticky;
+  top: 10rem;
+}
+
+.descriptionModule {
+  padding: 2rem;
+  background-color: var(--color-background-alt);
+  border-radius: 24px;
+}
+
+.descriptionModule h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.descriptionModule p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.scrollableColumn {
+  min-height: 100vh;
+}
+
+/* --- 4. Image Gallery --- */
+.imageGallery {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.imageWrapper:nth-child(2) {
+  width: 85%;
+  justify-self: end;
+}
+.imageWrapper:nth-child(3) {
+  width: 90%;
+  justify-self: start;
+}
+
+.galleryImage {
+  object-fit: cover;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  padding: 4rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detailsSection h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.missionStatement {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.7;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.subTeamGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.subTeamPill {
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.eventItem {
+  background-color: var(--color-background-alt);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.eventPoints {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  display: block;
+}
+
+.eventName {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--color-background-alt);
+  padding: 2rem;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.contactCard:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contactCard svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.contactCard h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--color-text-primary);
+}
+
+.contactCard p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- 5. History Timeline Section --- */
+.historySection h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 2px solid var(--color-border);
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-accent);
+}
+
+.timelineYear {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.timelineContent h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.timelineContent p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.viewCarButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.viewCarButton:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 2000;
+  backdrop-filter: blur(8px);
+}
+
+.modalContent {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modalImage {
+  display: block;
+  width: 50vw;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+  .stickyColumn {
+    position: static;
+    top: auto;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .programPage {
+    padding-top: 8rem;
+  }
+  .container {
+    padding: 2rem 1.5rem 6rem;
+  }
+  .hero {
+    margin-bottom: 4rem;
+  }
+}

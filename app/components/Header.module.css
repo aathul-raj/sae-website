@@ -1,0 +1,158 @@
+
+.navbar {
+  background-color: #490008; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.5rem auto 0 auto;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.navLinksLeft, .navLinksRight {
+  flex: 1;
+  display: flex;
+  gap: 3rem;
+}
+
+.navLinksLeft {
+  justify-content: flex-end;
+}
+
+.navLinksRight {
+  justify-content: flex-start;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdownParentLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.dropdownParentLink:hover {
+  color: #FFFFFF;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.link:hover {
+  color: #FFFFFF;
+}
+
+.logoImage{
+  align-self: center;
+  margin: 0 3rem;
+}
+
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  transform: translateX(-50%);
+  background-color: #490008;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: max-content;
+  z-index: 1100;
+}
+
+.dropdownLink {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdownLink:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    padding: 0.75rem 1rem;
+    gap: 1rem;
+  }
+  .navbar ul {
+    gap: 1.5rem;
+  }
+  .link {
+    font-size: 0.8rem;
+    padding-bottom: 4px;
+  }
+  .logoImage {
+    width: 60px;
+    height: auto;
+    margin: 0 1rem;
+  }
+}
