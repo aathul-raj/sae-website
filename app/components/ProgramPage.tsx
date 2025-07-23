@@ -83,105 +83,114 @@ const ProgramPage = ({ title, tagline, description, mission, subTeams, competiti
     <>
       <Header />
       <main className={styles.programPage}>
-        <div className={styles.container}>
-          
-          <motion.section className={styles.hero} initial="hidden" animate="visible" variants={containerVariants}>
-            <motion.h1 className={styles.title} variants={itemVariants}>{title}</motion.h1>
-            <motion.p className={styles.tagline} variants={itemVariants}>{tagline}</motion.p>
-          </motion.section>
+        {/* UPDATED: Wrap the entire page content container in a motion.div */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          <div className={styles.container}>
+            
+            {/* REMOVED: Redundant motion props, now controlled by the parent */}
+            <section className={styles.hero}>
+              <motion.h1 className={styles.title} variants={itemVariants}>{title}</motion.h1>
+              <motion.p className={styles.tagline} variants={itemVariants}>{tagline}</motion.p>
+            </section>
 
-          <div className={styles.contentGrid}>
-            <div className={styles.stickyColumn}>
-              <motion.div className={styles.descriptionModule} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
-                <h3>About the Program</h3>
-                <p>{description}</p>
-              </motion.div>
-            </div>
-
-            <div className={styles.scrollableColumn}>
-              {images && images.length > 0 && (
-                <motion.section className={styles.imageGallery} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
-                  {images.map((src, index) => (
-                    <motion.div key={index} className={styles.imageWrapper} variants={itemVariants}>
-                      <Image src={src} alt={`${title} team image ${index + 1}`} fill sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 40vw" className={styles.galleryImage}/>
-                    </motion.div>
-                  ))}
-                </motion.section>
-              )}
-
-              <motion.section 
-                className={styles.detailsSection}
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-              >
-                <motion.div variants={itemVariants}>
-                  <h3>Our Mission</h3>
-                  <blockquote className={styles.missionStatement}>{mission}</blockquote>
+            <div className={styles.contentGrid}>
+              <div className={styles.stickyColumn}>
+                {/* UPDATED: Simplified motion props */}
+                <motion.div className={styles.descriptionModule} variants={itemVariants}>
+                  <h3>About the Program</h3>
+                  <p>{description}</p>
                 </motion.div>
+              </div>
 
-                {subTeams && subTeams.length > 0 && (
-                  <motion.div variants={itemVariants}>
-                    <h3>Sub-Teams</h3>
-                    <div className={styles.subTeamGrid}>
-                      {subTeams.map(team => (
-                        <div key={team} className={styles.subTeamPill}>{team}</div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-
-                {competitionEvents && competitionEvents.length > 0 && (
-                  <motion.div variants={itemVariants}>
-                    <h3>The Competition</h3>
-                    <div className={styles.eventGrid}>
-                      {competitionEvents.map(event => (
-                        <div key={event.name} className={styles.eventItem}>
-                          <span className={styles.eventPoints}>{event.points} pts</span>
-                          <span className={styles.eventName}>{event.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-
-                <motion.div variants={itemVariants}>
-                  <h3>Get Involved</h3>
-                  <a href={`mailto:${contactEmail}`} className={styles.contactCard}>
-                    <Mail />
-                    <div>
-                      <h4>Have Questions?</h4>
-                      <p>Contact us for information on newsletters, student involvement, or industry partnerships.</p>
-                    </div>
-                  </a>
-                </motion.div>
-              </motion.section>
-
-              {history && history.length > 0 && (
-                <motion.section className={styles.historySection} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-                  <motion.h3 variants={itemVariants}>Team Legacy</motion.h3>
-                  <div className={styles.timeline}>
-                    {history.map((item, index) => (
-                      <motion.div key={index} className={styles.timelineItem} variants={itemVariants}>
-                        <div className={styles.timelineYear}>{item.year}</div>
-                        <div className={styles.timelineContent}>
-                          <h4>{item.achievement}</h4>
-                          {item.details && <p>{item.details}</p>}
-                        </div>
-                        {item.carImage && (
-                          <button className={styles.viewCarButton} onClick={() => item.carImage ? setModalImage(item.carImage) : undefined}>
-                            <Camera size={16} /> View Car
-                          </button>
-                        )}
+              <div className={styles.scrollableColumn}>
+                {images && images.length > 0 && (
+                  // UPDATED: Simplified motion props
+                  <motion.section className={styles.imageGallery} variants={containerVariants}>
+                    {images.map((src, index) => (
+                      <motion.div key={index} className={styles.imageWrapper} variants={itemVariants}>
+                        <Image src={src} alt={`${title} team image ${index + 1}`} fill sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 40vw" className={styles.galleryImage}/>
                       </motion.div>
                     ))}
-                  </div>
+                  </motion.section>
+                )}
+
+                {/* UPDATED: Simplified motion props */}
+                <motion.section 
+                  className={styles.detailsSection}
+                  variants={containerVariants}
+                >
+                  <motion.div variants={itemVariants}>
+                    <h3>Our Mission</h3>
+                    <blockquote className={styles.missionStatement}>{mission}</blockquote>
+                  </motion.div>
+
+                  {subTeams && subTeams.length > 0 && (
+                    <motion.div variants={itemVariants}>
+                      <h3>Sub-Teams</h3>
+                      <div className={styles.subTeamGrid}>
+                        {subTeams.map(team => (
+                          <div key={team} className={styles.subTeamPill}>{team}</div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {competitionEvents && competitionEvents.length > 0 && (
+                    <motion.div variants={itemVariants}>
+                      <h3>The Competition</h3>
+                      <div className={styles.eventGrid}>
+                        {competitionEvents.map(event => (
+                          <div key={event.name} className={styles.eventItem}>
+                            <span className={styles.eventPoints}>{event.points} pts</span>
+                            <span className={styles.eventName}>{event.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+
+                  <motion.div variants={itemVariants}>
+                    <h3>Get Involved</h3>
+                    <a href={`mailto:${contactEmail}`} className={styles.contactCard}>
+                      <Mail />
+                      <div>
+                        <h4>Have Questions?</h4>
+                        <p>Contact us for information on newsletters, student involvement, or industry partnerships.</p>
+                      </div>
+                    </a>
+                  </motion.div>
                 </motion.section>
-              )}
+
+                {history && history.length > 0 && (
+                  // UPDATED: Simplified motion props
+                  <motion.section className={styles.historySection} variants={containerVariants}>
+                    <motion.h3 variants={itemVariants}>Team Legacy</motion.h3>
+                    <div className={styles.timeline}>
+                      {history.map((item, index) => (
+                        <motion.div key={index} className={styles.timelineItem} variants={itemVariants}>
+                          <div className={styles.timelineYear}>{item.year}</div>
+                          <div className={styles.timelineContent}>
+                            <h4>{item.achievement}</h4>
+                            {item.details && <p>{item.details}</p>}
+                          </div>
+                          {item.carImage && (
+                            <button className={styles.viewCarButton} onClick={() => item.carImage ? setModalImage(item.carImage) : undefined}>
+                              <Camera size={16} /> View Car
+                            </button>
+                          )}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.section>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </main>
       <Footer />
       
