@@ -6,7 +6,13 @@ import Image from 'next/image'
 
 const MissionSection = () => {
   const { scrollY } = useScroll()
-  const carX = useTransform(scrollY, [0, 1700], ['150%', '-720%'])
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768
+
+  const carX = useTransform(
+    scrollY,
+    [0, 1700],
+    isMobile ? ['200%', '-320%'] : ['150%', '-720%']
+  )
 
   return (
     <section className={styles.missionSection}>

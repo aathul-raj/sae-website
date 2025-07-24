@@ -238,6 +238,9 @@
 }
 
 @media (max-width: 968px) {
+  .whyJoinSection{
+    margin-bottom: 5rem;
+  }
   .sliderGrid {
     grid-template-columns: 1fr;
     gap: 3rem;

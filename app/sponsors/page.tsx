@@ -1,11 +1,32 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, Variants } from 'framer-motion'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 import { ArrowRight, Building2, Copy, CreditCard, Flame, Mountain, University, Zap, Download } from 'lucide-react'
 import styles from './sponsors.module.css'
+
+const useIsMobile = (breakpoint: number = 768) => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= breakpoint)
+    }
+
+    // Check on mount
+    checkIsMobile()
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIsMobile)
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [breakpoint])
+
+  return isMobile
+}
 
 const donationTargets = [
     {
@@ -66,6 +87,8 @@ const SponsorsPage = () => {
     setActiveMethod(prev => ({ ...prev, [name]: method }))
   }
 
+  const isMobile = useIsMobile()
+  
   return (
     <>
       <Header />
@@ -89,7 +112,7 @@ const SponsorsPage = () => {
                   </div>
                   <div className={styles.methodToggle}>
                     <button onClick={() => handleMethodChange(target.name, 'card')} className={activeMethod[target.name] !== 'check' ? styles.active : styles.inactive}>
-                      <CreditCard size={16}/> Credit/Debit Card
+                      <CreditCard size={16}/> Credit/Debit {isMobile ? '' : 'Card'}
                     </button>
                     <button onClick={() => handleMethodChange(target.name, 'check')} className={activeMethod[target.name] === 'check' ? styles.active : styles.inactive}>
                       <University size={16}/> Check
