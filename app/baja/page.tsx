@@ -95,6 +95,7 @@ const BajaPage = () => {
       mission={pageData.mission}
       competitionEvents={pageData.competitionEvents}
       contactEmail={pageData.contactEmail}
+      subTeams={pageData.subTeams}
     />
   );
 };

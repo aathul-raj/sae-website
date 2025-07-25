@@ -130,6 +130,7 @@ const FormulaCombustionPage = () => {
       contactEmail={pageData.contactEmail}
       images={pageData.images}
       history={pageData.history}
+      subTeams={pageData.subTeams}
     />
   );
 };
