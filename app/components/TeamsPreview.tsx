@@ -71,7 +71,7 @@ const TeamsPreview = () => {
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-200px" }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           {teams.map((team, index) => (
             <motion.div key={team.id} className={styles.teamCard} variants={itemVariants}>

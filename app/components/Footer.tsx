@@ -66,7 +66,7 @@ const Footer = () => {
 
           <div className={styles.bottomBar}>
             <div className={styles.logo}>
-              <Image src="/SAE_logo.svg" alt="SAE Texas A&M Logo" fill quality={100} className={styles.logoImage}/>
+              <Image src="/SAE_logo.png" alt="SAE Texas A&M Logo" width={84} height={39} quality={100} className={styles.logoImage}/>
             </div>
             <div className={styles.socialIcons}>
               <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

@@ -261,18 +261,32 @@
     order: 1;
     min-height: 60vh;
   }
-  .navigation, .dotContainer {
-    left: 50%;
+
+  .navigation,
+  .dotContainer {
+    position: absolute;
+    width: 100%;
+  }
+
+  .navigation {
+    bottom: 1.5rem;
+    justify-content: center;
+    left: 45%;
     transform: translateX(-50%);
   }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
+  }
+
   .dotContainer {
-    bottom: 12px;
-    width: 100%;
+    bottom: 0rem;
     justify-content: center;
-    left: 0;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
   }
-  .navigation {
-    bottom: calc(5rem - 62px);
-  }
+
 }

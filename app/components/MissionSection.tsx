@@ -36,7 +36,7 @@ const MissionSection = () => {
         style={{ x: carX }}
       >
         <Image
-          src="/car_sticker.svg"
+          src="/car_sticker.png"
           alt="SAE Racecar"
           width={236}
           height={100}

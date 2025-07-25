@@ -145,8 +145,6 @@
   filter: invert(1);
   flex-shrink: 0;
   position: relative;
-  width: 84px;
-  height: 39px;
   margin: 0 3rem;
 }
 
@@ -255,8 +253,6 @@
   }
 
   .logo {
-    width: 70px; 
-    height: 32px;
     margin: 0;
   }
 }
