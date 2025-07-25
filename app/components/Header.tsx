@@ -40,12 +40,12 @@ const Header = () => {
               onMouseEnter={() => setIsDesktopDropdownOpen(true)}
               onMouseLeave={() => setIsDesktopDropdownOpen(false)}
             >
-              <Link href="/teams" className={styles.link}>
+              <h2 className={styles.link}>
                 Programs
                 <motion.div animate={{ rotate: isDesktopDropdownOpen ? 180 : 0 }}>
                   <ChevronDown size={16} />
                 </motion.div>
-              </Link>
+              </h2>
               <AnimatePresence>
                 {isDesktopDropdownOpen && (
                   <motion.div 
@@ -69,7 +69,7 @@ const Header = () => {
 
         <div className={styles.logo}>
           <Link href="/">
-            <Image src="/SAE_logo.svg" alt="TAMU SAE Logo" width={84} height={39} className={styles.logoImage}/>
+            <Image src="/SAE_logo.svg" alt="TAMU SAE Logo" fill quality={100} className={styles.logoImage}/>
           </Link>
         </div>
 

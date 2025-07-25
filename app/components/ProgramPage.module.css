@@ -357,6 +357,9 @@
 }
 
 @media (max-width: 768px) {
+  .title{
+    font-size: 3.5rem;
+  }
   .programPage {
     padding-top: 8rem;
   }

@@ -6,13 +6,11 @@ import Footer from '../components/Footer'
 import styles from './AboutPage.module.css'
 
 const officers = [
-  { role: 'President', name: 'Phillip Bertschy' },
-  { role: 'Vice President', name: 'Alan Yan' },
-  { role: 'Secretary', name: 'Patrick Pham' },
-  { role: 'Treasurer', name: 'Esteban Cavazos Zepeda' },
-  { role: 'Public Relations', name: 'Olivia Mo' },
-  { role: 'Development Officer', name: 'Matt Cain' },
-  { role: 'Development Officer', name: 'Adan Corral' },
+  { role: 'President', name: 'Zach Iacobucci' },
+  { role: 'Vice President', name: 'Pete Rome' },
+  { role: 'Secretary', name: 'Gerardo Hernandez' },
+  { role: 'Treasurer', name: 'James Dorsey' },
+  { role: 'Public Relations', name: 'Reese Billedo' },
 ]
 
 const containerVariants: Variants = {

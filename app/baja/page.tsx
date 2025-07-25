@@ -17,7 +17,12 @@ const pageData = {
     { name: 'Sales Presentation', points: 50 },
   ],
   contactEmail: "baja.sae.tamu@gmail.com",
-
+  subTeams: [
+    'Aerodynamics',
+    'Chassis',
+    'Powertrain',
+    'Suspension',
+  ],
   images: [
     '/images/baja/showcase/baja-sliding.jpg',
     '/images/baja/showcase/baja-good.jpg',

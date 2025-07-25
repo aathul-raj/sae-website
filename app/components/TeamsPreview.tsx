@@ -73,7 +73,7 @@ const TeamsPreview = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-200px" }}
         >
-          {teams.map((team) => (
+          {teams.map((team, index) => (
             <motion.div key={team.id} className={styles.teamCard} variants={itemVariants}>
               <div className={styles.imageWrapper}>
                 <Image
@@ -82,6 +82,8 @@ const TeamsPreview = () => {
                   width={800}
                   height={600}
                   className={styles.teamImage}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index === 0}
                 />
               </div>
               <div className={styles.content}>

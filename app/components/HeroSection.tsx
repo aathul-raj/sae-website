@@ -39,7 +39,7 @@ const HeroSection = () => {
   return (
     <section className={styles.heroSection}>
       <div className={`${styles.imageGrid} ${hoveredTeam ? styles.isHovered : ''}`}>
-        {teams.map((team) => (
+        {teams.map((team, index) => (
           <div
             key={team.id}
             className={styles.imageContainer}
@@ -51,11 +51,11 @@ const HeroSection = () => {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <Image
-                src={`/images/${team.id}/hero.svg`}
+                src={`/images/${team.id}/hero.webp`}
                 alt={team.name}
                 fill
                 style={{ objectFit: 'cover' }}
-                priority
+                priority={index === 0}
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </motion.div>

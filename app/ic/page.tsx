@@ -1,10 +1,10 @@
 import ProgramPage from "../components/ProgramPage";
 
 const pageData = {
-  title: "Formula Combustion",
+  title: "Formula Internal Combustion",
   tagline: "Where precision engineering meets raw power.",
 
-  description: "The FSAE program at Texas A&M offers engineering students the opportunity to be part of a team that designs, builds, and tests a formula-style race car as part of the Senior Capstone Design course. This enables students to thoroughly learn and apply the principles of design, project management, and business towards engineering a competitive vehicle.",
+  description: "The FSAE IC program at Texas A&M offers engineering students the opportunity to be part of a team that designs, builds, and tests a formula-style race car as part of the Senior Capstone Design course. This enables students to thoroughly learn and apply the principles of design, project management, and business towards engineering a competitive vehicle. Our program has won 8 championships since our inaugral year in 1999.",
 
   mission: "To develop exceptional engineers through innovative formula race car design and competition. Each year, our senior engineering students start with a clean slate, fostering creative freedom and unique problem-solving that prepares them for industry leadership while pursuing excellence in Formula SAE competition.",
   competitionEvents: [
@@ -18,7 +18,13 @@ const pageData = {
     { name: 'Endurance', points: 275 },
   ],
   contactEmail: "tamufsaebusiness@gmail.com",
-
+  subTeams: [
+    'Aerodynamics',
+    'Chassis',
+    'Electrical',
+    'Powertrain',
+    'Suspension',
+  ],
   images: [
     '/images/ic/showcase/ic-comp-celebration.jpg',
     '/images/ic/showcase/ic-smoke.jpg',
@@ -37,14 +43,14 @@ const pageData = {
     },
     {
       year: '2023-2024',
-      achievement: '',
-      details: '',
+      achievement: '1st Place in Autocross',
+      details: 'Strong autocross performance but faced endurance challenges, finishing 27th overall.',
       carImage: '/images/ic/showcase/history/24.jpeg'
     },
     {
       year: '2022-2023',
-      achievement: '',
-      details: '',
+      achievement: '5th Place in Autocross',
+      details: 'Continued competitive development with focus on reliability improvements.',
       carImage: '/images/ic/showcase/history/23.jpg'
     },
     {
@@ -62,7 +68,7 @@ const pageData = {
     {
       year: '2019-2020',
       achievement: '',
-      details: '',
+      details: 'Season impacted by global events, focused on design development.',
       carImage: '/images/ic/showcase/history/20.jpg'
     },
     {
@@ -73,22 +79,43 @@ const pageData = {
     },
     {
       year: '2017-2018',
-      achievement: '',
-      details: '',
+      achievement: 'National Champions Again',
+      details: 'Back-to-back championship with 1st in Endurance and 2nd in Autocross.',
       carImage: '/images/ic/showcase/history/18.png'
       
     },
     {
       year: '2016-2017',
-      achievement: '',
-      details: '',
+      achievement: 'National Champions',
+      details: 'Championship victory with 1st in Endurance and Fuel Efficiency, 2nd in Design.',
       carImage: '/images/ic/showcase/history/17.jpg'
     },
     {
       year: '2015-2016',
-      achievement: '',
+      achievement: '14th Overall with Strong Dynamic Performance',
+      details: '2nd place finishes in Acceleration and Autocross demonstrated competitive speed.'
+    },
+    {
+      year: '2010-2011',
+      achievement: 'National Champions',
       details: ''
     },
+    {
+      year: '2008-2009',
+      achievement: 'National Champions',
+      details: ''
+    },
+    {
+      year: '2006-2007',
+      achievement: 'Back-to-Back National Champions',
+      details: ''
+    },
+    {
+      year: '2005-2006',
+      achievement: 'National Champions',
+      details: ''
+    },
+
   ]
 };
 
