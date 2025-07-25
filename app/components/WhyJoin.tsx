@@ -168,7 +168,6 @@ const WhyJoin = () => {
                   onEnded={handlePauseOrEnd}
                   playsInline
                   preload="auto"
-                  muted
                 />
               ))}
               {!isVideoPlaying && (
