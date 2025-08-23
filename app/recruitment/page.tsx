@@ -108,7 +108,7 @@ const RecruitmentPage = () => {
                   <h3>Apprentice Applications Now Open!</h3>
                   <p>
                     Apprentice applications for the 2025-2026 school year are currently open for all teams from 
-                    <strong> August 25th to September 5th</strong>. Interviews and final acceptances will happen after the application period closes.
+                    <strong> August 25th to September 6th</strong>. Interviews and final acceptances will happen after the application period closes.
                   </p>
                   <p className={styles.banneringInfo}>
                     <strong>Come meet us in person!</strong> All teams will be bannering from <strong>August 28th to September 5th</strong> at the 
