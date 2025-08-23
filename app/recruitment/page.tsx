@@ -89,11 +89,34 @@ const RecruitmentPage = () => {
             <motion.button
               className={styles.applyButton}
               variants={itemVariants}
-              disabled
-              style={{ opacity: 0.6, cursor: 'not-allowed' }}
+              onClick={() => window.open('https://apply.tamusae.org', '_blank', 'noopener noreferrer')}
             >
               Apply via Pitcrew <ArrowRight size={20} />
             </motion.button>
+
+            <motion.section 
+              className={styles.currentOpportunitySection}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={containerVariants}
+            >
+              <motion.h2 className={styles.sectionTitle} variants={itemVariants}>We&apos;re Recruiting!</motion.h2>
+              <motion.div className={styles.opportunityCard} variants={itemVariants}>
+                <Users className={styles.opportunityIcon} />
+                <div className={styles.opportunityContent}>
+                  <h3>Apprentice Applications Now Open!</h3>
+                  <p>
+                    Apprentice applications for the 2025-2026 school year are currently open for all teams from 
+                    <strong> August 25th to September 5th</strong>. Interviews and final acceptances will happen after the application period closes.
+                  </p>
+                  <p className={styles.banneringInfo}>
+                    <strong>Come meet us in person!</strong> All teams will be bannering from <strong>August 28th to September 5th</strong> at the 
+                    Engineering Quad in front of Zach. Stop by to talk with current team members and learn more about what we do.
+                  </p>
+                </div>
+              </motion.div>
+            </motion.section>
 
             <div className={styles.teamsGrid}>
               {projectTeams.map(team => (

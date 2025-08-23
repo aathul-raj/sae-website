@@ -51,7 +51,7 @@ const HeroSection = () => {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <Image
-                src={`/images/${team.id}/hero.webp`}
+                src={`/images/${team.id}/hero.jpg`}
                 alt={team.name}
                 fill
                 style={{ objectFit: 'cover' }}
