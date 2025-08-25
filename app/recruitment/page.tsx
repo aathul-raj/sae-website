@@ -13,7 +13,7 @@ const projectTeams = [
     accentColor: '#C06E52',
     name: 'Formula IC',
     description: 'Join an 8x national championship legacy. We look for passionate students who want to win and push the limits of IC performance.',
-    requirements: 'All Majors, Seniors',
+    requirements: 'All Majors, Seniors and Juniors',
     capstone: 'Capstone for MEEN/MMET',
     path: '/ic',
   },
@@ -79,7 +79,7 @@ const RecruitmentPage = () => {
             className={styles.applySection}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={containerVariants}
           >
             <motion.h2 className={styles.sectionTitle} variants={itemVariants}>Join a Project Team</motion.h2>
@@ -98,7 +98,7 @@ const RecruitmentPage = () => {
               className={styles.currentOpportunitySection}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.1 }}
               variants={containerVariants}
             >
               <motion.h2 className={styles.sectionTitle} variants={itemVariants}>We&apos;re Recruiting!</motion.h2>
