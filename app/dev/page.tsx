@@ -10,7 +10,8 @@ const pageData = {
     '/images/dev/dev-baja.jpg',
     '/images/dev/dev-usb.jpg',
   ],
-  contactEmail: "TAMU.development@gmail.com",
+  contactEmail: "development.sae.tamu@gmail.com",
+  linktreeUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfkmTcXwYtTXBnatA4AI3ENKzxxHuuS8bcapD0qzwUySpSv8w/viewform",
   mission: "Our mission is to provide a comprehensive introduction to engineering principles and practices, fostering the next generation of innovators and problem solvers.",
   description: "The SAE Development Program is the entry point for new and aspiring members, targeted towards freshman and sophomores. It is designed to equip underclassmen with the fundamental skills, software knowledge, and hands-on experience necessary to excel on our competitive project teams. Through workshops on CAD and CAM, tutorials on machining and welding, and mentorship from senior members, the Development Program builds a strong foundation for a successful future in engineering."
 };
@@ -24,6 +25,7 @@ const DevelopmentPage = () => {
         mission={pageData.mission}
         contactEmail={pageData.contactEmail}
         images={pageData.images}
+        linktreeUrl={pageData.linktreeUrl}
     />
   );
 };

@@ -194,10 +194,19 @@ const ProgramPage = ({ title, tagline, description, mission, subTeams, competiti
                       {linktreeUrl && (
                         <a href={linktreeUrl} target="_blank" rel="noopener noreferrer" className={styles.contactCard}>
                           <LinkIcon />
-                          <div>
-                            <h4>All Our Links</h4>
-                            <p>Find links to everything you would need on our Linktree.</p>
-                          </div>
+                            <div>
+                            {title === 'SAE Development' ? (
+                              <>
+                              <h4>Sign Up for Dev!</h4>
+                              <p>Interested in joining SAE Development? Fill out our sign up form on Linktree.</p>
+                              </>
+                            ) : (
+                              <>
+                              <h4>All Our Links</h4>
+                              <p>Find links to everything you would need on our Linktree.</p>
+                              </>
+                            )}
+                            </div>
                         </a>
                       )}
 
