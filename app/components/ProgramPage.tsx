@@ -123,7 +123,7 @@ const ProgramPage = ({ title, tagline, description, mission, subTeams, competiti
               <div className={styles.stickyColumn}>
                 {/* UPDATED: Simplified motion props */}
                 <motion.div className={styles.descriptionModule} variants={itemVariants}>
-                  <h3>About the Program</h3>
+                  <h3>About Program</h3>
                   <p>{description}</p>
                 </motion.div>
               </div>

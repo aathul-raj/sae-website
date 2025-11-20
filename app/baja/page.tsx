@@ -22,6 +22,7 @@ const pageData = {
   subTeams: [
     'Electrical',
     'Chassis',
+    'Manufacturing',
     'Powertrain',
     'Suspension',
   ],
