@@ -89,7 +89,7 @@ const RecruitmentPage = () => {
             <motion.button
               className={styles.applyButton}
               variants={itemVariants}
-              disabled
+              onClick={() => window.open('https://apply.tamusae.org', '_blank')}
             >
               Apply via Pitcrew <ArrowRight size={20} />
             </motion.button>
@@ -101,14 +101,14 @@ const RecruitmentPage = () => {
               viewport={{ once: true, amount: 0.1 }}
               variants={containerVariants}
             >
-              <motion.h2 className={styles.sectionTitle} variants={itemVariants}>Applications Closed</motion.h2>
+              <motion.h2 className={styles.sectionTitle} variants={itemVariants}>Applications Open</motion.h2>
               <motion.div className={styles.opportunityCard} variants={itemVariants}>
                 <Users className={styles.opportunityIcon} />
                 <div className={styles.opportunityContent}>
-                  <h3>Apprentice Applications Are Now Closed.</h3>
+                  <h3>Applications Are Now Open.</h3>
                   <p>
-                    Apprentice applications for the 2025-2026 school year were open for all teams from 
-                    <strong> August 25th to September 6th</strong>. Interviews and final acceptances happened after the application period closed. <br/>Keep an eye out for full team applications for the 2026-2027 school year in the spring semester!
+                    Applications are currently open for the marketing and sponsor relations sub-teams for Formula EV from
+                    <strong> January 16th to January 31st</strong>. Interviews decisions released February 1st. <br/>Keep an eye out for full team applications for the 2026-2027 school year in the spring semester!
                   </p>
                   {/* <p className={styles.banneringInfo}>
                     <strong>Come meet us in person!</strong> All teams will be bannering from <strong>August 28th to September 5th</strong> at the 
