@@ -107,13 +107,13 @@ const RecruitmentPage = () => {
                 <div className={styles.opportunityContent}>
                   <h3>Applications Are Now Open.</h3>
                   <p>
-                    Applications are currently open for the marketing and sponsor relations sub-teams for Formula EV from
-                    <strong> January 16th to January 31st</strong>. Interviews decisions released February 1st. <br/>Keep an eye out for full team applications for the 2026-2027 school year in the spring semester!
+                    Applications are currently open for all teams from
+                    <strong> March 2nd to March 14th</strong>. Interviews decisions release March 16th. 
                   </p>
-                  {/* <p className={styles.banneringInfo}>
-                    <strong>Come meet us in person!</strong> All teams will be bannering from <strong>August 28th to September 5th</strong> at the 
+                  <p className={styles.banneringInfo}>
+                    <strong>Come meet us in person!</strong> All teams will be bannering from <strong>March 2nd to March 6th</strong> at the 
                     Engineering Quad in front of Zach. Stop by to talk with current team members and learn more about what we do.
-                  </p> */}
+                  </p>
                 </div>
               </motion.div>
             </motion.section>
